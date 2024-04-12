@@ -1,0 +1,32 @@
+const destinationCategories = [
+    {
+        title:"All",
+        iconName:"hiking"
+    },
+    {
+        title:"Beaches",
+        iconName:"beach"
+    },
+    {
+        title:"Cities",
+        iconName:"city"
+    },
+    {
+        title:"Forests",
+        iconName:"tree"
+    },
+    {
+        title:"National Park",
+        iconName:"pine-tree"
+    },
+    {
+        title:"Islands",
+        iconName:"island"
+    },
+    {
+        title:"Deserts",
+        iconName:"weather-sunny"
+    },
+
+];
+export default destinationCategories;

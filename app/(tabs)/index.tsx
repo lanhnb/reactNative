@@ -1,14 +1,23 @@
-import { Image, StyleSheet, Text, View, TouchableOpacity, TextInput } from "react-native";
-import React from "react";
+import { Image, StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView } from "react-native";
+import React, { useState } from "react";
 import { Stack } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import {useHeaderHeight} from '@react-navigation/elements'
 import { SearchBar } from "react-native-screens";
 import CategoryButtons from "@/components/CategoryButtons";
+import Listings from "@/components/Listings";
+import listingData from "@/data/destinations.json";
+
 
 const Page = () => {
   const headerHeight = useHeaderHeight();
+  const [category, setCategory] = useState('All')
+  
+  const onCatChanged = (category: string)=>{
+   
+    setCategory(category);
+  }
 
   return (
     <>
@@ -22,7 +31,7 @@ const Page = () => {
               source={{
                 uri: "https://res.cloudinary.com/dxnhv54sl/image/upload/v1695431219/logo/epiu3addc0ing9mk4l2p.png",
               }}
-              style={{ width: 40, height: 40, borderRadius: 10 }}
+              style={{ width: 40, height: 40, borderRadius: 5 }}
             />
           </TouchableOpacity>
         ),
@@ -45,6 +54,7 @@ const Page = () => {
         ),
       }}
     />
+    <ScrollView>
     <View style={[styles.container, {paddingTop: headerHeight}]}>
       <Text style={styles.headingText}>Explore the Beautiful World!</Text>
       <View style={styles.searchSelectionWrapper}>
@@ -57,8 +67,11 @@ const Page = () => {
 
         </TouchableOpacity>
       </View>
-      <CategoryButtons/>
+      <CategoryButtons onCategoryChanged={onCatChanged}/>
+      <Listings listings={listingData} />
+      
     </View>
+    </ScrollView>
     </>
   );
 };

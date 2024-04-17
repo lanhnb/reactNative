@@ -1,0 +1,38 @@
+[
+    {
+        "id":"1",
+        "name":"Ninh Binh",
+        "image":"https://res.cloudinary.com/dxnhv54sl/image/upload/v1706885470/xkld/gukicdnrckblpwzliq65.png",
+        "description":" Khu du lich noi tieng Ninh Binh",
+        "rating": 4.8,
+        "price":"150",
+        "duration":"3",
+        "location": "Dong Nam A",
+        "category": " Nui rung"
+
+    },
+    {
+        "id":"2",
+        "name":"Quang Binh",
+        "image":"https://res.cloudinary.com/dxnhv54sl/image/upload/v1706885471/xkld/vrci8gl0oghm2gloq6zp.png",
+        "description":" Khu du lich noi tieng Quang Binh",
+        "rating": 5,
+        "price":"250",
+        "duration":"4",
+        "location": "Dong Nam A",
+        "category": " Bien"
+
+    },
+    {
+        "id":"3",
+        "name":"Da Nang",
+        "image":"https://res.cloudinary.com/dxnhv54sl/image/upload/v1706885182/xkld/tlrhz3cl8ltvqlbkdgbl.png",
+        "description":" Khu du lich noi tieng Da Nang",
+        "rating": 5,
+        "price":"250",
+        "duration":"4",
+        "location": "Dong Nam A",
+        "category": " Bien"
+
+    }
+]

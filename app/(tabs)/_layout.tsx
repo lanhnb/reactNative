@@ -14,7 +14,7 @@ export default function Layout() {
           padding: 0,
         },
         tabBarShowLabel: true,
-        tabBarActiveTintColor:"#ff8000",
+        tabBarActiveTintColor:Colors.primaryColor,
         tabBarInactiveTintColor: "#999",
         
       }}

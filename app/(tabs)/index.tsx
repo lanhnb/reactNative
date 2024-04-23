@@ -18,6 +18,7 @@ import Listings from "@/components/Listings";
 import listingData from "@/data/destinations.json";
 import GroupListings from "@/components/GroupListings";
 import groupData from "@/data/groups.json";
+import MenuRe from "@/components/PopupMenu";
 
 const Page = () => {
   const headerHeight = useHeaderHeight();

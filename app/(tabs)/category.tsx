@@ -1,35 +1,31 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
+import { Stack } from "expo-router";
+import {useCameraPermission} from 'react-native-vision-camera'
 
 
 
-const Page =()=>{
-    const [data, setData] = useState();
-    const getAPIdata = async () => {
-        // const url = "https://lanhnb.click/api/products/1";
-        const url = "https://jsonplaceholder.typicode.com/posts/2";
-        let result = await fetch(url);
-        result = await result.json();
-        setData(result)
-    }
-    useEffect(() => {
-        getAPIdata()
-    }, [])
+const category =()=>{
+    const { hasPermission, requestPermission } = useCameraPermission()
+    const device = useCameraDevice('back')
+    console.log(hasPermission)
+    if (!hasPermission) return <PermissionsPage />
+    if (device == null) return <NoCameraDeviceError />
     return (
-        <View style={styles.container}>
-            <Text>Call Api</Text>
-         {
-            data ?
-            <View>
-                <Text>{data.id}</Text>
-                <Text>{data.title}</Text>
-            </View>
-            :null
-         }   
+        <View>
+            <Stack.Screen options={{headerShown: false}}/>
+            <Text>Camera</Text>
+
         </View>
+        <Camera
+              style={StyleSheet.absoluteFill}
+              device={device}
+              isActive={true}
+            />
+       
     )
 }
-export default Page
+export default category;
 
 const styles = StyleSheet.create({
     container: {

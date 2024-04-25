@@ -13,7 +13,6 @@ import {
 } from "react-native";
 import { Button, Menu, Divider, PaperProvider } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import Camera from "./Camera";
 
 const PopupMenu = () => {
   const [visible, setVisible] = React.useState(false);
@@ -23,6 +22,15 @@ const PopupMenu = () => {
 
   const closeMenu = () => setVisible(false);
   const options = [
+<<<<<<<<< Temporary merge branch 1
+    { title: "Publicar", icon: "grid", action: () => alert("publicar") },
+    { title: "Story", icon: "plus", action: () => alert("Story") },
+    { title: "Video do Reels", icon: "video", action: () => alert("Reels") },
+    {
+      title: "Transmissao ao vivo",
+      icon: "antenna",
+      action: () => alert("Transmissao"),
+=========
     { title: "Publicar", icon: "grid", action: "publicar"},
     { title: "Story", icon: "plus", action: "Story"},
     { title: "Video do Reels", icon: "video", action: "Reels" },
@@ -30,6 +38,7 @@ const PopupMenu = () => {
       title: "Transmissao ao vivo",
       icon: "antenna",
       action: "Transmissao",
+>>>>>>>>> Temporary merge branch 2
     },
   ];
 function resizeBox(to){
@@ -37,12 +46,13 @@ function resizeBox(to){
   Animated.timing(scale,{
     toValue: to,
     useNativeDriver:true,
+<<<<<<<<< Temporary merge branch 1
+    duration:2000,
+=========
     duration:700,
+>>>>>>>>> Temporary merge branch 2
     easing:Easing.linear,
   }).start(()=> to === 0 && setVisible(false));
-}
-function camera1(){
-  <Camera/>
 }
   return (
     <>
@@ -62,9 +72,13 @@ function camera1(){
           {opacity:scale.interpolate({inputRange:[0,1], outputRange:[0,1]})},
             {transform:[{scale}],}]}>
             {options.map((op, i)=>(
-              <TouchableOpacity style={[styles.option,{borderBottomWidth:i===options.length-1 ? 0:1}]} key={i}>
+<<<<<<<<< Temporary merge branch 1
+              <TouchableOpacity style={[styles.option,{borderBottomWidth:i===options.length-1 ? 0:1}]} key={i} onPress={()=>op.action}>
+=========
+              <TouchableOpacity style={[styles.option,{borderBottomWidth:i===options.length-1 ? 0:1}]} key={i} onPress={()=> alert(`${op.action}`)}>
+>>>>>>>>> Temporary merge branch 2
                 <Text>{op.title}</Text>
-                <MaterialCommunityIcons   name={op.icon} size={26} color={'#212121'} style={{marginLeft:10}}/>
+                <MaterialCommunityIcons name={op.icon} size={26} color={'#212121'} style={{marginLeft:10}}/>
               </TouchableOpacity>
             ))}
           </Animated.View>
@@ -81,7 +95,11 @@ const styles = StyleSheet.create({
     backgroundColor:Colors.white,
     paddingHorizontal:10,
     position:'absolute',
+<<<<<<<<< Temporary merge branch 1
+    top:50,
+=========
     top:85,
+>>>>>>>>> Temporary merge branch 2
     right:20,
   },
   option:{

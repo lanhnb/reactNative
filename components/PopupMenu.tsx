@@ -13,7 +13,7 @@ import {
 } from "react-native";
 import { Button, Menu, Divider, PaperProvider } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import Camera from "./Camera";
+
 
 const PopupMenu = () => {
   const [visible, setVisible] = React.useState(false);
@@ -41,9 +41,7 @@ function resizeBox(to){
     easing:Easing.linear,
   }).start(()=> to === 0 && setVisible(false));
 }
-function camera1(){
-  <Camera/>
-}
+
   return (
     <>
       <TouchableOpacity onPress={()=>resizeBox(1)}>
@@ -62,9 +60,9 @@ function camera1(){
           {opacity:scale.interpolate({inputRange:[0,1], outputRange:[0,1]})},
             {transform:[{scale}],}]}>
             {options.map((op, i)=>(
-              <TouchableOpacity style={[styles.option,{borderBottomWidth:i===options.length-1 ? 0:1}]} key={i}>
+              <TouchableOpacity style={[styles.option,{borderBottomWidth:i===options.length-1 ? 0:1}]} key={i} onPress={()=> op.action}>
                 <Text>{op.title}</Text>
-                <MaterialCommunityIcons   name={op.icon} size={26} color={'#212121'} style={{marginLeft:10}}/>
+                <MaterialCommunityIcons name={op.icon} size={26} color={'#212121'} style={{marginLeft:10}}/>
               </TouchableOpacity>
             ))}
           </Animated.View>

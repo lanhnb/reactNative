@@ -21,9 +21,9 @@ const Page = () => {
     <>
       <Stack.Screen
         options={{
-          headerTransparent: false,
+          headerTransparent: true,
           headerTitle: "Settings",
-         headerStyle:{backgroundColor:Colors.primaryColor},
+         
           
           headerLeft: () => (
             <View>
@@ -45,6 +45,19 @@ const Page = () => {
       <View style={styles.xkld}>
        <Xkld/>
       </View>
+
+      {/* for one */}
+      {/* <View style={styles.container}>
+            <Text>Call Api</Text>
+         {
+            data ?
+            <View>
+                <Text>{data.id}</Text>
+                <Text>{data.title}</Text>
+            </View>
+            :null
+         }   
+        </View> */}
     </>
   );
 };

@@ -60,7 +60,7 @@ function resizeBox(to){
           {opacity:scale.interpolate({inputRange:[0,1], outputRange:[0,1]})},
             {transform:[{scale}],}]}>
             {options.map((op, i)=>(
-              <TouchableOpacity style={[styles.option,{borderBottomWidth:i===options.length-1 ? 0:1}]} key={i} onPress={()=> op.action}>
+              <TouchableOpacity style={[styles.option,{borderBottomWidth:i===options.length-1 ? 0:1}]} key={i} onPress={()=> alert(op.action)}>
                 <Text>{op.title}</Text>
                 <MaterialCommunityIcons name={op.icon} size={26} color={'#212121'} style={{marginLeft:10}}/>
               </TouchableOpacity>

@@ -6,8 +6,9 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
+  Alert, Button, Linking
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Stack } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
@@ -36,7 +37,7 @@ const Page = () => {
           headerTransparent: true,
           headerTitle: "",
           headerLeft: () => (
-            <TouchableOpacity onPress={() => {}} style={{ marginLeft: 20 }}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://lanhnb.store')} style={{ marginLeft: 20 }}>
               <Image
                 source={{
                   uri: "https://res.cloudinary.com/dxnhv54sl/image/upload/v1695431219/logo/epiu3addc0ing9mk4l2p.png",

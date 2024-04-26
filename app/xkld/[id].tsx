@@ -50,7 +50,7 @@ const ListingDetails = () => {
 const listing1= data.find(
     (item) => item._id === id
   );
-  console.log("listing1", listing1)
+  
 
   const router = useRouter();
   const scrollRef = useAnimatedRef<Animated.ScrollView>();

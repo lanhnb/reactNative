@@ -19,9 +19,6 @@ const PopupMenu = () => {
   const [visible, setVisible] = React.useState(false);
   const scale = React.useRef(new Animated.Value(0)).current;
 
-  const openMenu = () => setVisible(true);
-
-  const closeMenu = () => setVisible(false);
   const options = [
     { title: "Publicar", icon: "grid", action: "publicar"},
     { title: "Story", icon: "plus", action: "Story"},

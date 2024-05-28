@@ -5,9 +5,9 @@ import {
   View,
   TouchableOpacity,
   TextInput,
-  ScrollView, Linking
+  ScrollView,
 } from "react-native";
-import React, { useState,useCallback } from "react";
+import React, { useState } from "react";
 import { Stack } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
@@ -29,18 +29,6 @@ const Page = () => {
     setCategory(category);
   };
 
-const handleLinking = ()=>{
-  const url = 'https:www.lanhnb.store';
-  Linking.openURL(url)
-  .then(()=>{
-    console.log('success');
-  })
-  .catch((error)=>{console.log('Error open URL', error);
-
-  });
- 
-};
-
   return (
     <>
       <Stack.Screen
@@ -48,7 +36,7 @@ const handleLinking = ()=>{
           headerTransparent: true,
           headerTitle: "",
           headerLeft: () => (
-            <TouchableOpacity onPress={handleLinking} style={{ marginLeft: 20 }}>
+            <TouchableOpacity onPress={() => {}} style={{ marginLeft: 20 }}>
               <Image
                 source={{
                   uri: "https://res.cloudinary.com/dxnhv54sl/image/upload/v1695431219/logo/epiu3addc0ing9mk4l2p.png",

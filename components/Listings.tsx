@@ -29,6 +29,7 @@ const Listings = ({ listings, category }: Props) => {
     }, 200);
   }, [category]);
   const renderItems: ListRenderItem<ListingType> = ({ item }) => {
+
     return (
       <>
       <Link href={`/listing/${item.id}`} asChild>

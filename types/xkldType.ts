@@ -1,4 +1,4 @@
-export interface xkldType {
+export interface XkldType {
     _id: string;
     namex: string;
     categoryx: string;

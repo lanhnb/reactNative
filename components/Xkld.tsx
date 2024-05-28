@@ -8,12 +8,13 @@ import {
     Text,
   } from "react-native";
   import React, { useEffect, useState } from "react";
-  
+  import {XkldType} from '@/types/xkldType'
   import { Colors } from "@/constants/Colors";
   import { FontAwesome5, Ionicons } from "@expo/vector-icons";
   import { Link } from "expo-router";
   
   type Props = {
+    XkldType:[];
     xkld: any[];
     image:any[];
    
@@ -83,7 +84,7 @@ import {
                     <Text style={styles.itemLocationTxt}>{item.location}</Text>
                   </View>
                   <View>
-                    <Text style={styles.itemPriceTxt}>${item.price}</Text>
+                    <Text style={styles.itemPriceTxt}>${item.salaryx}</Text>
                   </View>
                 </View>
               </View>

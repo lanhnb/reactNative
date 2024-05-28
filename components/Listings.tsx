@@ -20,14 +20,26 @@ type Props = {
 
 const Listings = ({ listings, category }: Props) => {
   const [loading, setLoading] = useState(false);
+  const [filteredListings, setFilteredListings] = useState<ListingType[]>([]);
+
   useEffect(()=>{
     console.log('Update Listing:', category );
+
+    if (category){
+    const filtered = listings.filter(
+    (listing)=>listing.category === category);
+    setFilteredListings(filtered);
+    if (category === "All"){
+    setFilteredListings(listings)
+    }
+
     setLoading(true);
+    }
 
     setTimeout(()=>{
       setLoading(false)
     }, 200);
-  }, [category]);
+  }, [listings, category]);
   const renderItems: ListRenderItem<ListingType> = ({ item }) => {
 
     return (
@@ -79,12 +91,16 @@ const Listings = ({ listings, category }: Props) => {
   };
   return (
     <View>
+    {loading ?(
+    <Text>Loading...</Text>
+    ):(
       <FlatList
-        data={ loading? []: listings }
+        data={filteredListings}
         renderItem={renderItems}
         horizontal
         showsHorizontalScrollIndicator={false}
       />
+      )}
     </View>
   );
 };
